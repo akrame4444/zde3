@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
+import java.awt.Window.Type;
 
 public class MyFiles extends JFrame {
 
@@ -45,10 +46,12 @@ public class MyFiles extends JFrame {
 	 * Create the frame.
 	 */
 	public MyFiles(String path , String Owner) {
+		setAlwaysOnTop(true);
+		setType(Type.POPUP);
 		
 		System.out.println("My Files = "+ Owner);
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1359, 828);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

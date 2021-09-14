@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.TextArea;
 import javax.swing.JButton;
+import java.awt.Window.Type;
 
 public class FileReader extends JFrame {
 
@@ -33,7 +34,8 @@ public class FileReader extends JFrame {
 	 * Create the frame.
 	 */
 	public FileReader() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setType(Type.POPUP);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 582, 723);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

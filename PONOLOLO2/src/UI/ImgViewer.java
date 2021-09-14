@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import java.awt.Window.Type;
 
 public class ImgViewer extends JFrame {
 
@@ -38,7 +39,10 @@ public class ImgViewer extends JFrame {
 	 * Create the frame.
 	 */
 	public ImgViewer(String path) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setType(Type.POPUP);
+		setAutoRequestFocus(false);
+		setAlwaysOnTop(true);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 664, 723);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

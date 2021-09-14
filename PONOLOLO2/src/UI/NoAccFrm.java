@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.Window.Type;
 
 public class NoAccFrm extends JFrame {
 
@@ -33,7 +34,8 @@ public class NoAccFrm extends JFrame {
 	 * Create the frame.
 	 */
 	public NoAccFrm() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setType(Type.POPUP);
 		setBounds(100, 100, 345, 143);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
