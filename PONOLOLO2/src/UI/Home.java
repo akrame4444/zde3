@@ -2,6 +2,7 @@ package UI;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Dialog.ModalExclusionType;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -35,6 +36,8 @@ public class Home extends JFrame {
 			public void run() {
 				try {
 					Home frame = new Home(path, Owner);
+					frame.setSize(1200,600);
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,9 +51,11 @@ public class Home extends JFrame {
 	 * @param info 
 	 */
 	public Home(String path , String Owner) {
-		System.out.println("home= "+ Owner);
+		setAlwaysOnTop(true);
+		setAutoRequestFocus(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1359, 828);
+		System.out.println("home= "+ Owner);
+		setBounds(100, 100, 1138, 574);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -67,11 +72,11 @@ public class Home extends JFrame {
         DefaultTableModel model = new DefaultTableModel(data,col);
 		
 		JButton btnNewButton = new JButton("Search");
-		btnNewButton.setBounds(1203, 31, 130, 23);
+		btnNewButton.setBounds(26, 32, 130, 23);
 		contentPane.add(btnNewButton);
 		
 		textField = new JTextField();
-		textField.setBounds(194, 32, 999, 23);
+		textField.setBounds(194, 32, 902, 23);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -124,7 +129,7 @@ public class Home extends JFrame {
 				}
 			}
 		});
-		btnNewButton_1.setBounds(1203, 755, 130, 23);
+		btnNewButton_1.setBounds(26, 291, 130, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Add file");
@@ -134,12 +139,12 @@ public class Home extends JFrame {
 				frm.sain(null, Owner, false);
 			}
 		});
-		btnNewButton_2.setBounds(1063, 755, 130, 23);
+		btnNewButton_2.setBounds(26, 321, 130, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(".\\Asset\\lock (4).png"));
-		lblNewLabel.setBounds(26, 65, 130, 128);
+		lblNewLabel.setBounds(26, 116, 130, 128);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnNewButton_2_1 = new JButton("Log off");
@@ -151,7 +156,7 @@ public class Home extends JFrame {
 			}
 			
 		});
-		btnNewButton_2_1.setBounds(26, 721, 130, 23);
+		btnNewButton_2_1.setBounds(26, 351, 130, 23);
 		contentPane.add(btnNewButton_2_1);
 		
 		JButton btnNewButton_2_2 = new JButton("Show QR");
@@ -161,9 +166,18 @@ public class Home extends JFrame {
 				QRsaveFrame.qro(null, path);
 			}
 		});
-		btnNewButton_2_2.setBounds(26, 687, 130, 23);
+	
+		btnNewButton_2_2.setBounds(26, 255, 130, 23);
 		contentPane.add(btnNewButton_2_2);
 		
+		textField = new JTextField();
+		textField.setBounds(194, 32, 902, 23);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JTextField username = new JTextField("");
+		username.setBounds(26, 65, 130, 40);
+		contentPane.add(username);
 		JButton btnNewButton_2_3 = new JButton("Edit infos");
 		btnNewButton_2_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -171,11 +185,11 @@ public class Home extends JFrame {
 				f.foo(null, true);
 			}
 		});
-		btnNewButton_2_3.setBounds(26, 653, 130, 23);
+		btnNewButton_2_3.setBounds(26, 381, 130, 23);
 		contentPane.add(btnNewButton_2_3);
 		
 		JButton btnNewButton_2_3_1 = new JButton("Edit attributs");
-		btnNewButton_2_3_1.setBounds(26, 619, 130, 23);
+		btnNewButton_2_3_1.setBounds(26, 411, 130, 23);
 		contentPane.add(btnNewButton_2_3_1);
 		
 		JButton btnNewButton_2_3_1_1 = new JButton("My files");
@@ -187,11 +201,11 @@ public class Home extends JFrame {
 				
 			}
 		});
-		btnNewButton_2_3_1_1.setBounds(26, 585, 130, 23);
+		btnNewButton_2_3_1_1.setBounds(26, 441, 130, 23);
 		contentPane.add(btnNewButton_2_3_1_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(194, 65, 1139, 679);
+		scrollPane.setBounds(194, 65, 928, 470);
 		contentPane.add(scrollPane);
 		
 		table = new JTable(model);
