@@ -27,10 +27,10 @@ import UI.Home;
 import UI.QRSave;
 
 public class SQLManager {
-	
+   public static String url = "jdbc:mysql://localhost/dbpfe?characterEncoding=latin1&useConfigs=maxPerformance";
     public static String getQr (String info) {
         try {
-            String url = "jdbc:mysql://localhost/dbpfe";
+        
             Connection conn = DriverManager.getConnection(url,"root","");
             Statement stmt = conn.createStatement();
             ResultSet rs;
@@ -53,7 +53,7 @@ public class SQLManager {
 	
 	   public static void UpdatePolicy (String info, String Policy) {
 		      // Open a connection
-		      try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/dbpfe", "root", "");
+		      try(Connection conn = DriverManager.getConnection(url, "root", "");
 		         Statement stmt = conn.createStatement();
 		      ) {		      
 		         String sql = "UPDATE files " +
@@ -66,7 +66,7 @@ public class SQLManager {
 		public static String getPolicy (String info) {
 			String p = ""; 
 			try {	
-	        String url = "jdbc:mysql://localhost/dbpfe";
+	        
 	        Connection conn = DriverManager.getConnection(url,"root","");
 	        Statement stmt = conn.createStatement();
 	        ResultSet rs;
@@ -91,7 +91,7 @@ public class SQLManager {
 	   
 	public static boolean isCrybd (String info) {
 		try {	
-        String url = "jdbc:mysql://localhost/dbpfe";
+       
         Connection conn = DriverManager.getConnection(url,"root","");
         Statement stmt = conn.createStatement();
         ResultSet rs;
@@ -117,7 +117,7 @@ public class SQLManager {
 	
 	   public static void UpdateText (String info, String cribd) {
 		      // Open a connection
-		      try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/dbpfe", "root", "");
+		      try(Connection conn = DriverManager.getConnection(url, "root", "");
 		         Statement stmt = conn.createStatement();
 		      ) {		      
 		         String sql = "UPDATE files " +
@@ -130,7 +130,7 @@ public class SQLManager {
 	
     public static String getText (String info) {
         try {
-            String url = "jdbc:mysql://localhost/dbpfe";
+          
             Connection conn = DriverManager.getConnection(url,"root","");
             Statement stmt = conn.createStatement();
             ResultSet rs;
@@ -153,7 +153,7 @@ public class SQLManager {
 	
     public static String getext (String info) {
         try {
-            String url = "jdbc:mysql://localhost/dbpfe";
+        
             Connection conn = DriverManager.getConnection(url,"root","");
             Statement stmt = conn.createStatement();
             ResultSet rs;
@@ -201,8 +201,8 @@ public class SQLManager {
         try {
             //connecto
 	        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-     	    String mysqlUrl = "jdbc:mysql://localhost/dbpfe";
-		    Connection con = DriverManager.getConnection(mysqlUrl, "root", "");
+     
+		    Connection con = DriverManager.getConnection(url, "root", "");
 		    System.out.println("Connection established......");
 		    //connecto
 		    
@@ -212,7 +212,7 @@ public class SQLManager {
             rs = pstmt.executeQuery();
             //dozan
             // write binary stream into file
-            File file = new File("ppnyar"+".png");
+            File file = new File("temp");
             fos = new FileOutputStream(file);
 
             System.out.println("Writing BLOB to file " + file.getAbsolutePath());
@@ -252,8 +252,8 @@ public class SQLManager {
 		   System.out.println("count Fileuploader = "+ user);
 		   
 		      DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-		      String mysqlUrl = "jdbc:mysql://localhost/dbpfe";
-		      Connection con = DriverManager.getConnection(mysqlUrl, "root", "");
+		    
+		      Connection con = DriverManager.getConnection(url, "root", "");
 		      System.out.println("Connection established......");
 		      Statement stmt = con.createStatement();
 		      String query = "select count(*) from files where Owner = '"+user+"'";
@@ -270,7 +270,7 @@ public class SQLManager {
         	System.out.println("Fileuploader = "+ user);
         	
         	DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            String url = "jdbc:mysql://localhost/dbpfe";
+           
             Connection conn = DriverManager.getConnection(url,"root","");
             Statement stmt = conn.createStatement();
             ResultSet rs;
@@ -298,14 +298,14 @@ public class SQLManager {
         }
     }
 	  public static void Delete(String info) {
-		    String jdbcUrl = "jdbc:mysql://localhost/dbpfe";
+		  
 		    String username = "root";
 		    String password = "";
 		    String sql = "delete from files where Filename = '"+info+"'";
 		    
 		    System.out.println(sql);
 
-		    try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password); 
+		    try (Connection conn = DriverManager.getConnection(url, username, password); 
 		        Statement stmt = conn.createStatement();) {
 		      
 		      stmt.executeUpdate(sql);
@@ -332,8 +332,8 @@ public class SQLManager {
 	
 	   public static int countFiles() throws Exception {
 		      DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-		      String mysqlUrl = "jdbc:mysql://localhost/dbpfe";
-		      Connection con = DriverManager.getConnection(mysqlUrl, "root", "");
+		     
+		      Connection con = DriverManager.getConnection(url, "root", "");
 		      System.out.println("Connection established......");
 		      Statement stmt = con.createStatement();
 		      String query = "select count(*) from files";
@@ -347,7 +347,7 @@ public class SQLManager {
     public static String [][] FileUploader () {
         try {
         	DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            String url = "jdbc:mysql://localhost/dbpfe";
+           
             Connection conn = DriverManager.getConnection(url,"root","");
             Statement stmt = conn.createStatement();
             ResultSet rs;
@@ -379,8 +379,8 @@ public class SQLManager {
 		      //Registering the Driver
 		      DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 		      //Getting the connection
-		      String mysqlUrl = "jdbc:mysql://localhost/dbpfe";
-		      Connection con = DriverManager.getConnection(mysqlUrl, "root", "");
+		      
+		      Connection con = DriverManager.getConnection(url, "root", "");
 		      System.out.println("Connection established......");
 
 		      //Inserting values
@@ -406,7 +406,7 @@ public class SQLManager {
 	       } catch (Exception e) {
 	          System.out.println(e);
 	    }
-	    conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/dbpfe", "root", "");
+	    conn = (Connection) DriverManager.getConnection(url, "root", "");
 	    System.out.println("Connection is created successfully:");
 	    stmt = (Statement) conn.createStatement();
 	    stmt.executeUpdate(query);
@@ -439,7 +439,7 @@ public class SQLManager {
 	
 	public static String[] InfoUser(String QR) {
         try {
-            String url = "jdbc:mysql://localhost/dbpfe";
+            
             Connection conn = DriverManager.getConnection(url,"root","");
             Statement stmt = conn.createStatement();
             ResultSet rs;
