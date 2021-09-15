@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
+import java.awt.Window.Type;
 
 public class AddFile extends JFrame {
 
@@ -47,7 +48,9 @@ public class AddFile extends JFrame {
 	 * Create the frame.
 	 */
 	public AddFile(String Owner, Boolean edit) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setAlwaysOnTop(true);
+		setType(Type.POPUP);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 596, 659);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Window.Type;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class NoAccFrm extends JFrame {
 
@@ -34,6 +36,7 @@ public class NoAccFrm extends JFrame {
 	 * Create the frame.
 	 */
 	public NoAccFrm() {
+		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setType(Type.POPUP);
 		setBounds(100, 100, 345, 143);
@@ -45,13 +48,5 @@ public class NoAccFrm extends JFrame {
 		JLabel lblNewLabel = new JLabel("Access denied !");
 		lblNewLabel.setBounds(129, 33, 127, 14);
 		contentPane.add(lblNewLabel);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(171, 70, 89, 23);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(72, 70, 89, 23);
-		contentPane.add(btnNewButton_1);
 	}
 }

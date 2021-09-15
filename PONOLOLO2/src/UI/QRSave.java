@@ -15,6 +15,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 
 public class QRSave extends JFrame {
 
@@ -40,7 +41,9 @@ public class QRSave extends JFrame {
 	 * Create the frame.
 	 */
 	public QRSave(String path) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setType(Type.POPUP);
+		setAlwaysOnTop(true);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 971, 902);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

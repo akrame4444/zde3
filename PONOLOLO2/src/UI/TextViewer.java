@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.TextArea;
 import javax.swing.JButton;
+import java.awt.Window.Type;
 
 public class TextViewer extends JFrame {
 
@@ -33,7 +34,9 @@ public class TextViewer extends JFrame {
 	 * Create the frame.
 	 */
 	public TextViewer(String txt) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setType(Type.POPUP);
+		setAlwaysOnTop(true);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 623, 696);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

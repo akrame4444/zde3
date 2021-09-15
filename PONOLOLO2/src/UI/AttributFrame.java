@@ -18,6 +18,7 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 
 public class AttributFrame extends JFrame {
 
@@ -43,7 +44,8 @@ public class AttributFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public AttributFrame(String[] args, String email, String fname, String lname, String pw) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setType(Type.POPUP);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 528, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

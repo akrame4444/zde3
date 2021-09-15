@@ -52,7 +52,7 @@ public class MyFiles extends JFrame {
 		System.out.println("My Files = "+ Owner);
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 1359, 828);
+		setBounds(100, 100, 1287, 721);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -69,11 +69,11 @@ public class MyFiles extends JFrame {
         DefaultTableModel model = new DefaultTableModel(data,col);
 		
 		JButton btnNewButton = new JButton("Search");
-		btnNewButton.setBounds(1203, 31, 130, 23);
+		btnNewButton.setBounds(1131, 32, 130, 23);
 		contentPane.add(btnNewButton);
 		
 		textField = new JTextField();
-		textField.setBounds(194, 32, 999, 23);
+		textField.setBounds(194, 32, 923, 23);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -110,7 +110,7 @@ public class MyFiles extends JFrame {
 			}
 			
 		});
-		btnNewButton_2_1.setBounds(26, 721, 130, 23);
+		btnNewButton_2_1.setBounds(26, 649, 130, 23);
 		contentPane.add(btnNewButton_2_1);
 		
 		JButton btnNewButton_2_2 = new JButton("Return");
@@ -121,11 +121,11 @@ public class MyFiles extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_2_2.setBounds(26, 687, 130, 23);
+		btnNewButton_2_2.setBounds(26, 603, 130, 23);
 		contentPane.add(btnNewButton_2_2);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(194, 65, 1139, 679);
+		scrollPane.setBounds(194, 65, 1052, 618);
 		contentPane.add(scrollPane);
 		
 		table = new JTable(model);

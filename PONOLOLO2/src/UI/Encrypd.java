@@ -62,7 +62,7 @@ public class Encrypd extends JFrame {
 	public Encrypd(String info) {
 		setAutoRequestFocus(false);
 		setAlwaysOnTop(true);
-		setType(Type.POPUP);
+		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 775, 829);
 		contentPane = new JPanel();

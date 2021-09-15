@@ -34,7 +34,8 @@ public class FileReader extends JFrame {
 	 * Create the frame.
 	 */
 	public FileReader() {
-		setType(Type.POPUP);
+		setAlwaysOnTop(true);
+		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 582, 723);
 		contentPane = new JPanel();

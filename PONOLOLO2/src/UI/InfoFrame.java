@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import java.awt.Window.Type;
 
 public class InfoFrame extends JFrame {
 
@@ -43,7 +44,8 @@ public class InfoFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public InfoFrame(String[] args, boolean edit) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setType(Type.UTILITY);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 506, 327);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -39,7 +39,7 @@ public class ImgViewer extends JFrame {
 	 * Create the frame.
 	 */
 	public ImgViewer(String path) {
-		setType(Type.POPUP);
+		setType(Type.UTILITY);
 		setAutoRequestFocus(false);
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
