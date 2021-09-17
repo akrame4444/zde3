@@ -391,7 +391,8 @@ public class SQLManager {
 		      pstmt.setString(2, name);
 		      pstmt.setString(3, desc);
 		      pstmt.setString(4,ext);
-		      pstmt.setBinaryStream(5, fin);
+
+		      pstmt.setBinaryStream(5, fin,  fin.toString().length());
 		      pstmt.setString(6,txt);
 		      pstmt.execute();
 		      System.out.println("Record inserted .....");

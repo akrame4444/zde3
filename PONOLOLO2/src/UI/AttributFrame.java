@@ -107,7 +107,7 @@ public class AttributFrame extends JFrame {
 					QR = QR + "/TESTER ";
 				}
 				try {
-					QRManager.generateQRCodeImage(QR, 1000, 1000, QRPath);
+					QRManager.generateQRCodeImage(QR, 500, 500, QRPath);
 				} catch (WriterException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
